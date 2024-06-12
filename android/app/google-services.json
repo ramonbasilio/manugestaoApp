@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "806189076331",
+    "project_id": "manugestao",
+    "storage_bucket": "manugestao.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806189076331:android:5eca4856e8e4e74f36c62e",
+        "android_client_info": {
+          "package_name": "com.manugestao"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQM3CKH0KMo9ZzWDrZUes-9fN7qwk0arM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
