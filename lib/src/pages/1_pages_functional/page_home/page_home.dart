@@ -10,12 +10,13 @@ class PageHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 100,
         centerTitle: true,
         automaticallyImplyLeading: false,
         title: Image.asset(
           'lib/assets/logo-app.png',
           fit: BoxFit.fitHeight,
-          height: 100,
+          height: 130,
         ),
       ),
       body: Padding(
