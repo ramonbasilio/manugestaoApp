@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:manugestao_app/src/services/firebase_auth.dart';
 
 class PageSignUP extends StatefulWidget {
-  PageSignUP({super.key});
+  const PageSignUP({super.key});
 
   @override
   State<PageSignUP> createState() => _PageSignUPState();
@@ -44,12 +45,12 @@ class _PageSignUPState extends State<PageSignUP> {
               TextFormField(
                 controller: _companyNameController,
                 decoration: const InputDecoration(labelText: 'Nome da Empresa'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o nome da empresa';
-                  }
-                  return null;
-                },
+                // validator: (value) {
+                //   if (value == null || value.isEmpty) {
+                //     return 'Por favor, insira o nome da empresa';
+                //   }
+                //   return null;
+                // },
               ),
               TextFormField(
                 controller: _adminNameController,
@@ -66,22 +67,22 @@ class _PageSignUPState extends State<PageSignUP> {
                 controller: _phoneController,
                 decoration: const InputDecoration(labelText: 'Telefone'),
                 keyboardType: TextInputType.phone,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o telefone';
-                  }
-                  return null;
-                },
+                // validator: (value) {
+                //   if (value == null || value.isEmpty) {
+                //     return 'Por favor, insira o telefone';
+                //   }
+                //   return null;
+                // },
               ),
               TextFormField(
                 controller: _addressController,
                 decoration: const InputDecoration(labelText: 'Endereço'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o endereço';
-                  }
-                  return null;
-                },
+                // validator: (value) {
+                //   if (value == null || value.isEmpty) {
+                //     return 'Por favor, insira o endereço';
+                //   }
+                //   return null;
+                // },
               ),
               TextFormField(
                 controller: _emailController,
@@ -137,22 +138,25 @@ class _PageSignUPState extends State<PageSignUP> {
                   ),
                 ),
                 obscureText: _confirmPasswordVisible,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, confirme sua senha';
-                  }
-                  if (value != _passwordController.text) {
-                    return 'As senhas não coincidem';
-                  }
-                  return null;
-                },
+                // validator: (value) {
+                //   if (value == null || value.isEmpty) {
+                //     return 'Por favor, confirme sua senha';
+                //   }
+                //   if (value != _passwordController.text) {
+                //     return 'As senhas não coincidem';
+                //   }
+                //   return null;
+                // },
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   if (_formKey.currentState!.validate()) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Processando cadastro')),
+                    await FireAuth.registerUsignEmailPassword(
+                      name: _adminNameController.text,
+                      email: _emailController.text,
+                      password: _passwordController.text,
+                      context: context,
                     );
                   }
                 },
