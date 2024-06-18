@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:manugestao_app/src/alerts/alerts_auth.dart';
-import 'package:manugestao_app/src/pages/1_pages_functional/page_home/page_home.dart';
 import 'package:manugestao_app/src/pages/0_pages_login/page_sign-in/page_sign-in.dart';
 import 'package:manugestao_app/src/pages/1_pages_functional/page_init/page_init.dart';
 

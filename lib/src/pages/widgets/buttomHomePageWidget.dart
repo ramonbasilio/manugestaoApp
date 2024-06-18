@@ -37,3 +37,15 @@ class _ButtomHomePageWidgetState extends State<ButtomHomePageWidget> {
     );
   }
 }
+// MELHORAR BOTÕES 
+                // Container(
+                //   width: double.infinity,
+                //   child: ElevatedButton(
+                //       style: ElevatedButton.styleFrom(
+                //           animationDuration: Duration(milliseconds: 30),
+                //           shadowColor: Colors.white,
+                //           foregroundColor: Colors.white,
+                //           backgroundColor: Colors.grey),
+                //       onPressed: () {},
+                //       child: Text('Botão teste')),
+                // ),
